@@ -41,11 +41,29 @@ int main(int argc, char **argv) {
     drop(forward(reset(nullptr)));
     problems[0] = std::move(RECORDS);
 
+    std::cout << "Problems[0]: ";
+    for (const auto& record : problems[0]) {
+        std::cout << record << " ";
+    }
+    std::cout << std::endl;
+
     forward(drop(reset(forward(forward(reset(nullptr))))));
     problems[1] = std::move(RECORDS);
 
+    std::cout << "Problems[1]: ";
+    for (const auto& record : problems[1]) {
+        std::cout << record << " ";
+    }
+    std::cout << std::endl;
+
     drop(drop(reset(drop(reset(reset(nullptr))))));
     problems[2] = std::move(RECORDS);
+
+    std::cout << "Problems[2]: ";
+    for (const auto& record : problems[2]) {
+        std::cout << record << " ";
+    }
+    std::cout << std::endl;
 
     // ---- 不要修改以上代码 ----
 
